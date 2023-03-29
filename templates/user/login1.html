@@ -7,17 +7,25 @@
 {% load static %}
 <link rel ="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
 
-{% comment %} <div class="login-box">
-  <h2>Login</h2>
+<div class="login-box">
+  <h2>SELECT ONE</h2>
   <form>
-    <a href="#">
+    <div class="user-box">
+      <input type="text" name="" required="">
+      <label>Username</label>
+    </div>
+    <div class="user-box">
+      <input type="password" name="" required="">
+      <label>Password</label>
+    </div>
+    <a href="{% url 'managerlogin' %}">
       <span></span>
       <span></span>
       <span></span>
       <span></span>
       MANAGER
     </a>
-    <a href="#">
+    <a href="{% url 'managerlogin' %}">
       <span></span>
       <span></span>
       <span></span>
@@ -25,20 +33,20 @@
       DEVELOPER
     </a>
   </form>
-</div> {% endcomment %}
+</div>
 
-<div class="container">
+{% comment %} <div class="container">
   <div class="left">
     <div class="header">
       <h2 class="animation a1">Welcome Back....</h2>
       <h4 class="animation a2">Please, choose your Designation</h4>
     </div>
-    <div class="form">
+    <div class="form">  {% endcomment %}
       {% comment %} <input type="email" class="form-field animation a3" placeholder="MANAGER">
       <input type="password" class="form-field animation a4" placeholder="DEVELOPER"> {% endcomment %}
-      <button class="animation a6">MANAGER</button>
+      {% comment %} <button class="animation a6">MANAGER</button>
       <button class="animation a6">DEVELOPER</button>
     </div>
   </div>
   <div class="right"></div>
-</div>
+</div> {% endcomment %}

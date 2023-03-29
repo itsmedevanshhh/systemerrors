@@ -10,6 +10,9 @@ urlpatterns = [
     path('login/',UserLoginView.as_view(),name='login'),
     path('logout/',UserLogoutView.as_view(),name='logout'),
     path('dashboard/',dashboard,name='dashboard'),
+    path('managerlogin/',managerlogin.as_view(),name='managerlogin'),
+    path('managerpage/',ManagerPage.as_view(),name='managerpage'),
+    path('manager_dashboard/',ManagerDashboardView.as_view(),name='manager_dashboard'),
     
     # path('home/' ,home,name='home'),
 

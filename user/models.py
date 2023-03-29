@@ -11,3 +11,4 @@ class User(AbstractUser):
     salary = models.IntegerField(default=0)
     class Meta:
         db_table = 'user'
+# Create your models here.

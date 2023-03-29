@@ -1,0 +1,470 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% comment %} <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> {% endcomment %}
+  <link rel="apple-touch-icon" sizes="76x76" href="{% static "../static/assets/img/apple-icon.png" %}">
+  <link rel="icon" type="image/png" href=" {% static "../static/assets/img/favicon.png" %} ">
+  <title>
+  </title>
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <!-- Nucleo Icons -->
+  <link href="{% static "../static/assets/css/nucleo-icons.css" %}" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link href="{% static "../static/assets/css copy/black-dashboard.css" %}" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="{% static "../static/assets/demo/demo.css" %}" rel="stylesheet" />
+</head>
+ <h1 class="title">
+    Black Dashboard
+  </h1>
+<body>
+  
+  {% comment %} <div class="wrapper"> {% endcomment %}
+    {% comment %}<div class="sidebar">
+     </div> {% endcomment %}
+    {% comment %} <div class="main-panel ps"> {% endcomment %}
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
+    <div class="container">
+      <div class="navbar-wrapper">
+        <div class="navbar-toggle d-inline">
+          {% comment %} <button type="button" class="navbar-toggler">
+            <span class="navbar-toggler-bar bar1"></span>
+            <span class="navbar-toggler-bar bar2"></span>
+            <span class="navbar-toggler-bar bar3"></span>
+          </button> 
+        </div> {% endcomment %}
+        {% comment %} <a class="navbar-brand" href="javascript:void(0)"></a>
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-bar navbar-kebab"></span>
+        <span class="navbar-toggler-bar navbar-kebab"></span>
+        <span class="navbar-toggler-bar navbar-kebab"></span>
+      </button> {% endcomment %}
+      <div class="collapse navbar-collapse" id="navigation">
+        <ul class="navbar-nav ml-auto">
+          {% comment %} <li class="nav-item">
+            <a class="nav-link" href="../examples/dashboard.html">
+              Back to Dashboard
+            </a>
+          </li> {% endcomment %}
+           {% comment %} <li class="nav-item">
+            <a class="nav-link" href="https://github.com/creativetimofficial/black-dashboard/issues" target="_blank">
+              Have an issue?
+            </a>
+          </li>  {% endcomment %}
+      </div>
+  </nav>
+  {% comment %} <div class="content">
+    <div class="row">
+      <div class="col-12">
+        <div class="card card-chart">
+          <div class="card-header ">
+            <div class="row">
+              <div class="col-sm-6 text-left">
+                <h2 class="card-title">Performance</h2>
+              </div>
+              <div class="col-sm-6">
+                <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+                  <label class="btn btn-sm btn-primary btn-simple active" id="0">
+                    <input type="radio" name="options" checked="">
+                    <span class="d-block d-sm-none">
+                      <i class="tim-icons icon-single-02"></i>
+                    </span>
+                  </label>
+                  <label class="btn btn-sm btn-primary btn-simple" id="1">
+                    <input type="radio" class="d-none d-sm-none" name="options">
+                    <span class="d-block d-sm-none">
+                      <i class="tim-icons icon-gift-2"></i>
+                    </span>
+                  </label>
+                  <label class="btn btn-sm btn-primary btn-simple" id="2">
+                    <input type="radio" class="d-none" name="options">
+                    <span class="d-block d-sm-none">
+                      <i class="tim-icons icon-tap-02"></i>
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div> {% endcomment %}
+          {% comment %} <div class="card-body">
+            
+            <div class="chart-area">
+              <div class="chartjs-size-monitor" style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+              <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0">
+                </div>
+              </div>
+              <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                <div style="position:absolute;width:200%;height:200%;left:0; top:0">
+                </div>
+              </div>
+            </div>
+              <canvas id="chartBig1" width="1520" height="275" style="display: block; height: 220px; width: 1216px;" class="chartjs-render-monitor">
+
+              
+              </canvas>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> {% endcomment %}
+    {% comment %} <div class="row">
+      <div class="col-lg-4">
+        <div class="card card-chart">
+          {% comment %} <div class="card-body">
+            <div class="chart-area"><div class="chartjs-size-monitor" style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+              <canvas id="chartLinePurple" width="473" height="275" style="display: block; height: 220px; width: 379px;" class="chartjs-render-monitor"></canvas>
+            </div>
+          </div> 
+        </div>
+      </div> {% endcomment %}
+          {% comment %} <div class="card-body"> {% endcomment %}
+            {% comment %} <div class="chart-area"><div class="chartjs-size-monitor" style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div> {% endcomment %}
+              {% comment %} <canvas id="CountryChart" width="473" height="275" style="display: block; height: 220px; width: 379px;" class="chartjs-render-monitor"></canvas>
+            </div> {% endcomment %}
+          {% comment %} </div>
+        </div>
+      </div> {% endcomment %}
+          {% comment %} <div class="card-body">
+            {% comment %} <div class="chart-area"><div class="chartjs-size-monitor" style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+              <canvas id="chartLineGreen" width="473" height="275" style="display: block; height: 220px; width: 379px;" class="chartjs-render-monitor"></canvas>
+          </div>
+          </div> {% endcomment %}
+        {% comment %} </div>
+      </div>
+    </div> {% endcomment %}
+          {% comment %} <div class="card-body">
+            <div class="table-responsive ps"> {% endcomment %}
+              {% comment %} <table class="table tablesorter " id="">
+                <thead class=" text-primary">
+                </tbody>
+              </table> {% endcomment %}
+            <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="tim-icons icon-simple-remove"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- End Navbar -->
+  <div class="page-header clear-filter">
+    <div class="page-header-image" style="background-image: url('../assets/img/img_3115.jpg');"></div>
+    <div class="content-center">
+      <div class="col-md-8 ml-auto mr-auto">
+        <div class="brand">
+          {% comment %} <h1 class="title">
+            Black Dashboard
+          </h1> {% endcomment %}
+          {% comment %} <h3 class="description">Documentation v1.0.0</h3> {% endcomment %}
+          <br />
+          {% comment %} <a href="https://demos.creative-tim.com/black-dashboard/docs/1.0/getting-started/introduction.html" class="btn btn-primary btn-round btn-lg">View documentation</a> {% endcomment %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-panel">
+    {% comment %} <div class="content-wrapper">   {% endcomment %}
+      <div class="card">
+  <h3 class="card-header">PROJECTS</h3>
+  <h1 class="card-header">
+  <a class="btn btn-primary" href="{% url 'create_project' %}">ADD NEW PROJECT</a>  
+  </h1>
+  <div class="table-responsive text-nowrap">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>PROJECT</th>
+          <th>DESCRIPTION</th>
+          <th>TECHNOLOGY</th>
+          <th>STATUS</th>
+          <th>ACTIONS</th>
+        </tr>
+      </thead>
+      <tbody class="table-border-bottom-0">
+        {% for project in projects %}
+        <tr>
+          <td>
+            <i class="fab fa-angular fa-lg text-danger me-3"></i>
+            <strong>{{project.title}}</strong>
+          </td>
+          <td>{{project.description}}</td>
+          <td>{{project.technology}}</td>
+          <td><span class="badge bg-label-primary me-1">Active</span></td>
+          <td>
+            <div class="dropdown">
+           <a class="dropdown-item" href="{% url 'update_project' project.id %}"
+                ><i class="bx bx-trash me-1"></i> Edit</a
+              >
+              <a class="dropdown-item" href="{% url 'delete_project' project.id %}"
+                ><i class="bx bx-trash me-1"></i> Delete</a
+              >
+            </div>
+          </td>
+        </tr>
+
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+  <!-- partial:partials/_sidebar.html -->
+  {% comment %} <nav class="sidebar sidebar-offcanvas" id="sidebar"> {% endcomment %}
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="icon-grid menu-icon"></i>
+          <span class="menu-title">HOME</span>
+        </a>
+      </li>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="icon-grid menu-icon"></i>
+          <span class="menu-title">CONTACT US</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="icon-grid menu-icon"></i>
+          <span class="menu-title">ABOUT US</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="icon-grid menu-icon"></i>
+          <span class="menu-title">LOG OUT</span>
+        </a>
+      </li>
+      
+  {% comment %} <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h1 class="title">BLK•</h1>
+        </div>
+        <div class="col-md-3 col-6">
+          <ul class="nav">
+            <li class="nav-item">
+              <a href="../index.html" class="nav-link">
+                Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="../examples/landing-page.html" class="nav-link">
+                Landing
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="../examples/register-page.html" class="nav-link">
+                Register
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="../examples/profile-page.html" class="nav-link">
+                Profile
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-6">
+          <ul class="nav">
+            <li class="nav-item">
+              <a href="https://creative-tim.com/contact-us?ref=blkdsp-footer" class="nav-link">
+                Contact Us
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://creative-tim.com/about-us?ref=blkdsp-footer" class="nav-link">
+                About Us
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="http://creative-tim.com/blog?ref=blkdsp-footer" class="nav-link">
+                Blog
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://opensource.org/licenses/MIT?ref=blkdsp-footer" class="nav-link">
+                License
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3 class="title">Follow us:</h3>
+          <div class="btn-wrapper profile text-left">
+            <a target="_blank" href="https://twitter.com/creativetim" class="btn btn-icon btn-neutral btn-round btn-simple" data-toggle="tooltip" data-original-title="Follow us">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a target="_blank" href="https://www.facebook.com/creativetim" class="btn btn-icon btn-neutral btn-round btn-simple" data-toggle="tooltip" data-original-title="Like us">
+              <i class="fab fa-facebook-square"></i>
+            </a>
+            <a target="_blank" href="https://dribbble.com/creativetim" class="btn btn-icon btn-neutral  btn-round btn-simple" data-toggle="tooltip" data-original-title="Follow us">
+              <i class="fab fa-dribbble"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer> {% endcomment %}
+  
+  <!--   Core JS Files   -->
+  <script src="../assets/js/core/jquery.min.js"></script>
+  <script src="../assets/js/core/popper.min.js"></script>
+  <script src="../assets/js/core/bootstrap.min.js"></script>
+  <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!--  Google Maps Plugin    -->
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!-- Chart JS -->
+  <script src="../assets/js/plugins/chartjs.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="../assets/js/black-dashboard.min.js?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
+  <script src="../assets/demo/demo.js"></script>
+  <script>
+    
+    $(document).ready(function() {
+      $().ready(function() {
+        $sidebar = $('.sidebar');
+        $navbar = $('.navbar');
+        $main_panel = $('.main-panel');
+        
+
+        $full_page = $('.full-page');
+
+        $sidebar_responsive = $('body > .navbar-collapse');
+        sidebar_mini_active = true;
+        white_color = false;
+
+        window_width = $(window).width();
+
+        fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
+
+
+
+        $('.fixed-plugin a').click(function(event) {
+          if ($(this).hasClass('switch-trigger')) {
+            if (event.stopPropagation) {
+              event.stopPropagation();
+            } else if (window.event) {
+              window.event.cancelBubble = true;
+            }
+          }
+        });
+
+        $('.fixed-plugin .background-color span').click(function() {
+          $(this).siblings().removeClass('active');
+          $(this).addClass('active');
+
+          var new_color = $(this).data('color');
+
+          if ($sidebar.length != 0) {
+            $sidebar.attr('data', new_color);
+          }
+
+          if ($main_panel.length != 0) {
+            $main_panel.attr('data', new_color);
+          }
+
+          if ($full_page.length != 0) {
+            $full_page.attr('filter-color', new_color);
+          }
+
+          if ($sidebar_responsive.length != 0) {
+            $sidebar_responsive.attr('data', new_color);
+          }
+        });
+
+        $('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function() {
+          var $btn = $(this);
+
+          if (sidebar_mini_active == true) {
+            $('body').removeClass('sidebar-mini');
+            sidebar_mini_active = false;
+            blackDashboard.showSidebarMessage('Sidebar mini deactivated...');
+          } else {
+            $('body').addClass('sidebar-mini');
+            sidebar_mini_active = true;
+            blackDashboard.showSidebarMessage('Sidebar mini activated...');
+          }
+
+          // we simulate the window Resize so the charts will get updated in realtime.
+          var simulateWindowResize = setInterval(function() {
+            window.dispatchEvent(new Event('resize'));
+          }, 180);
+
+          // we stop the simulation of Window Resize after the animations are completed
+          setTimeout(function() {
+            clearInterval(simulateWindowResize);
+          }, 1000);
+        });
+
+        $('.switch-change-color input').on("switchChange.bootstrapSwitch", function() {
+          var $btn = $(this);
+
+          if (white_color == true) {
+
+            $('body').addClass('change-background');
+            setTimeout(function() {
+              $('body').removeClass('change-background');
+              $('body').removeClass('white-content');
+            }, 900);
+            white_color = false;
+          } else {
+
+            $('body').addClass('change-background');
+            setTimeout(function() {
+              $('body').removeClass('change-background');
+              $('body').addClass('white-content');
+            }, 900);
+
+            white_color = true;
+          }
+
+
+        });
+
+        $('.light-badge').click(function() {
+          $('body').addClass('white-content');
+        });
+
+        $('.dark-badge').click(function() {
+          $('body').removeClass('white-content');
+        });
+      });
+    });
+  </script>
+  
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  <script>
+    window.TrackJS &&
+      TrackJS.install({
+        token: "ee6fab19c5a04ac1a32a645abde4613a",
+        application: "black-dashboard-free"
+      });
+  </script>
+</div>
+</body>
+</html>
